@@ -591,7 +591,7 @@
             obj.prepareData();
             obj.reset();
             // process sortData
-            for (var s in this.sortData) {
+            for (s = 0; s < this.sortData.length; s++) {
                 var column = this.getColumn(this.sortData[s].field);
                 if (!column) return;
                 if (typeof column.render == 'string') {
