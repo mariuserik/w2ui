@@ -592,6 +592,7 @@
             obj.reset();
             // process sortData
             for (s = 0; s < this.sortData.length; s++) {
+
                 var column = this.getColumn(this.sortData[s].field);
                 if (!column) return;
                 if (typeof column.render == 'string') {
@@ -606,7 +607,7 @@
             // process sort
             this.records.sort(function (a, b) {
                 var ret = 0;
-                for (var s in obj.sortData) {
+                for (s = 0; s < obj.sortData.length; s++) {
                     var fld = obj.sortData[s].field;
                     if (obj.sortData[s].field_) fld = obj.sortData[s].field_;
                     var aa = a[fld];
